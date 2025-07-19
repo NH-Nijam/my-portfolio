@@ -19,22 +19,22 @@ const Header = () => {
     return (
         <header className={` sticky top-0 z-10  border-b-2  py-3 bg-gray-950 border-gray-900`}>
             <nav className='container md:px-10 px-3 h-[60px] lg:h-20 flex items-center justify-between '>
-                <div>
+                <div >
                     <Link href="/">
-                        <i className='flex gap-2 text-[30px] font-bold '>
+                        <i className='flex gap-2 text-[30px] font-bold !z-30 '>
                             <span className='text-orange-600 '>Nijam</span>
                             <span>Hossen</span>
                         </i>
                     </Link>
                 </div>
-                <div className='lg:flex hidden gap-10 '>
-                        <Link className={`${pathName === '/' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/">Home</Link>
+                <div className='lg:flex hidden gap-10 !z-50 '>
+                        <Link className={` !z-50 ${pathName === '/' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/">Home</Link>
                     
 
-                        <Link className={`${pathName === '/MyProjects' ? 'dav' : 'hover:text-orange-600 duration-500 nav'}`} href="/MyProjects">My Projects</Link>
+                        <Link className={` !z-50 ${pathName === '/MyProjects' ? 'dav' : 'hover:text-orange-600 duration-500 nav'}`} href="/MyProjects">My Projects</Link>
                     
 
-                        <Link className={`${pathName === '/Contact' ? 'dav' : 'hover:text-orange-600 duration-500 nav'}`} href="/Contact">Contact</Link>
+                        <Link className={`!z-50 ${pathName === '/Contact' ? 'dav' : 'hover:text-orange-600 duration-500 nav'}`} href="/Contact">Contact</Link>
                 </div>
 
                 {/* small device start */}

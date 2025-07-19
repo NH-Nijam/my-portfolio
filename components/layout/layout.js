@@ -6,8 +6,8 @@ import FluidCursor from "../cursor-animation/cursor-pointer";
 const Layout = ({ children }) => {
     return (
         <div>
-             <FluidCursor/>
-            <div className=" p-0 pb-10 border-none">
+            <FluidCursor/>
+            <div className=" p-0 pb-10 border-none !z-50">
                 <Header />
                 <div>
                     {children}
