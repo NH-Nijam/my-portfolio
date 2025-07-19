@@ -14,7 +14,7 @@ const Hero = () => {
         'React Developer',
     ]
     return (
-        <div className="z-0 h-screen flex lg:flex-row gap-10 lg:gap-0 items-center justify-between lg:px-0 md:px-10 px-3  w-full sticky top-0 container">
+        <div className="z-0 h-screen flex lg:flex-row gap-10 lg:gap-0 items-center justify-between lg:px-0 md:px-10 px-3  w-full sticky top-0 ">
             <div className=" w-full flex flex-col gap-5 text-center lg:text-start ">
                 <p className="text-base md:text-xl 2xl:text-3xl ">
                     Let's create something new !!!

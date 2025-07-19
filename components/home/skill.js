@@ -12,6 +12,7 @@ import React from 'react';
 // import mongodb from 
 // import firebase from 
 import SkillCard from './skill-card';
+import FluidCursor from '../cursor-animation/cursor-pointer';
 
 const Skill = () => {
     return (

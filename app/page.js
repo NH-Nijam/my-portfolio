@@ -9,7 +9,9 @@ const Home = () => {
   return (
     <ReactLenis root >
       <div>
-        <Hero />
+        <div className='container'>
+          <Hero />
+        </div>
         <section className="bg-gray-800 h-screen sticky top-0 rounded-tr-2xl rounded-tl-2xl overflow-hidden"> 
          <Skill />
         </section>

@@ -1,14 +1,12 @@
 'use client'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaBars } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { FaHome } from "react-icons/fa";
 import { FaDiagramProject } from "react-icons/fa6";
 import { RiContactsBookFill } from "react-icons/ri";
-import { IoIosSunny } from 'react-icons/io';
-import { IoMoonOutline } from "react-icons/io5";
 
 
 const Header = () => {
@@ -19,7 +17,7 @@ const Header = () => {
         setShow(!show)
     }
     return (
-        <header className={` sticky top-0 z-10  border-b-2  py-3 bg-gray-900 border-gray-700`}>
+        <header className={` sticky top-0 z-10  border-b-2  py-3 bg-gray-950 border-gray-900`}>
             <nav className='container md:px-10 px-3 h-[60px] lg:h-20 flex items-center justify-between '>
                 <div>
                     <Link href="/">
@@ -71,16 +69,11 @@ const Header = () => {
                                         <RiContactsBookFill />
                                         <Link className={`${pathName === '/Contact' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/Contact">Contact</Link>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                {/* small device end */}
-
             </nav>
         </header>
     );

@@ -1,10 +1,12 @@
 'use client'
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import Header from "./navbar";
+import FluidCursor from "../cursor-animation/cursor-pointer";
 
 const Layout = ({ children }) => {
     return (
-        <div >
+        <div>
+             <FluidCursor/>
             <div className=" p-0 pb-10 border-none">
                 <Header />
                 <div>
