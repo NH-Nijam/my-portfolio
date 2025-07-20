@@ -2,6 +2,7 @@
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import Header from "./navbar";
 import FluidCursor from "../cursor-animation/cursor-pointer";
+import Footer from "./footer";
 
 const Layout = ({ children }) => {
     return (
@@ -17,6 +18,7 @@ const Layout = ({ children }) => {
                         </button>
                     </div>
                 </div>
+                <Footer />
             </div>
         </div>
 

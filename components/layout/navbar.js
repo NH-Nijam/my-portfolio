@@ -1,82 +1,162 @@
-'use client'
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React, { useState } from 'react';
-import { FaBars } from "react-icons/fa6";
-import { IoClose } from "react-icons/io5";
-import { FaHome } from "react-icons/fa";
-import { FaDiagramProject } from "react-icons/fa6";
-import { RiContactsBookFill } from "react-icons/ri";
+"use client";
+import { RiMenu4Fill } from "react-icons/ri";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Dropdown } from "antd";
 
+const navItems = [
+  { label: "Home", href: "#" },
+  { label: "Project", href: "#projects" },
+  { label: "Toolkit", href: "#toolkit" },
+  { label: "Blog", href: "#blog" },
+  { label: "About Me", href: "#about" },
+];
 
+const items = [
+  {
+    key: "1",
+    label: (
+      <a
+        rel="noopener noreferrer"
+        href="#"
+      >
+        Home
+      </a>
+    ),
+  },
+  {
+    key: "2",
+    label: (
+      <a
+        rel="noopener noreferrer"
+        href="#projects"
+      >
+        Project
+      </a>
+    ),
+  },
+  {
+    key: "3",
+    label: (
+      <a
+        rel="noopener noreferrer"
+        href="#toolkit"
+      >
+        Toolkit
+      </a>
+    ),
+  },
+  {
+    key: "4",
+    label: (
+      <a
+        rel="noopener noreferrer"
+        href="#blog"
+      >
+        Blog
+      </a>
+    ),
+  },
+  {
+    key: "5",
+    label: (
+      <a
+        rel="noopener noreferrer"
+        href="#about"
+      >
+        About Me
+      </a>
+    ),
+  },
+];
 const Header = () => {
-    const [show, setShow] = useState(false)
-    const pathName = usePathname()
+  const [scrolled, setScrolled] = useState(false);
 
-    const handler = () => {
-        setShow(!show)
-    }
-    return (
-        <header className={` sticky top-0 z-10  border-b-2  py-3 bg-gray-950 border-gray-900`}>
-            <nav className='container md:px-10 px-3 h-[60px] lg:h-20 flex items-center justify-between '>
-                <div >
-                    <Link href="/">
-                        <i className='flex gap-2 text-[30px] font-bold !z-30 '>
-                            <span className='text-orange-600 '>Nijam</span>
-                            <span>Hossen</span>
-                        </i>
-                    </Link>
-                </div>
-                <div className='lg:flex hidden gap-10 !z-50 '>
-                        <Link className={` !z-50 ${pathName === '/' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/">Home</Link>
-                    
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-                        <Link className={` !z-50 ${pathName === '/MyProjects' ? 'dav' : 'hover:text-orange-600 duration-500 nav'}`} href="/MyProjects">My Projects</Link>
-                    
+  return (
+    <div className=" relative ">
+      <motion.nav
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`sm:fixed w-full top-0 left-0 z-50 backdrop-blur-md transition-all duration-300 ${
+        scrolled ? "sm:bg-[#0f1115]/80 shadow-xl" : "sm:bg-transparent"
+      }`}
+    >
+      <div className="container py-4 sm:py-6 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-3 cursor-pointer"
+          >
+            <Image
+              src="/logo.png"
+              alt="Md. Nijam Hossen"
+              width={900}
+              height={900}
+              className="rounded-full shadow-lg w-8 md:w-10 lg:w-12 h-8 md:h-10 lg:h-12"
+            />
+            <span className="text-white text-base sm:text-lg lg:text-xl font-bold tracking-wide bg-gradient-to-r from-[#12F7D6] via-[#A66CFF] to-[#F8C3FF] bg-clip-text text-transparent">
+              Md. Nijam Hossen
+            </span>
+          </motion.div>
+        </Link>
 
-                        <Link className={`!z-50 ${pathName === '/Contact' ? 'dav' : 'hover:text-orange-600 duration-500 nav'}`} href="/Contact">Contact</Link>
-                </div>
-
-                {/* small device start */}
-                <div className=' lg:hidden flex gap-5  '>
-
-                    
-                    <div onClick={handler} className='cursor-pointer lg:hidden relative'>
-                        <FaBars size={30} />
-
-                        <div className={
-                            show ? `fixed left-0 top-0 md:w-[40%] w-[70%]  h-screen md:px-10 px-3 ease-in duration-500 `
-                                :
-                                `fixed left-[-100%] top-0  h-screen ease-out duration-500`
-                        }>
-                            <div onClick={handler} className='cursor-pointer '>
-                                <div className='flex items-center justify-end h-[60px]   '>
-                                    <IoClose size={30} />
-
-                                </div>
-                                <div className='mt-16  flex gap-10 flex-col text-2xl'>
-                                    <div className={`${pathName === "/" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
-                                        <FaHome />
-                                        <Link className={`${pathName === '/' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/">Home</Link>
-                                    </div>
-
-                                    <div className={`${pathName === "/MyProjects" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
-                                        <FaDiagramProject />
-                                        <Link className={`${pathName === '/MyProjects' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/MyProjects">My Projects</Link>
-                                    </div>
-
-                                    <div className={`${pathName === "/Contact" ? 'text-orange-600  flex items-center gap-8 ' : 'nav flex items-center gap-8'}`}>
-                                        <RiContactsBookFill />
-                                        <Link className={`${pathName === '/Contact' ? 'dav' : 'hover:text-orange-600  underline-orange-600  duration-500 nav'}`} href="/Contact">Contact</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    );
+        {/* Navigation */}
+        <div className="flex items-center gap-1 md:gap-8 text-sm font-semibold text-[#b8b9bb]">
+          {navItems.map((item) => (
+            <motion.a
+              key={item.label}
+              href={item.href}
+              className="relative group hidden md:block"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <span className="text-white hover:text-[#A66CFF] transition-colors duration-300 ">
+                {item.label}
+              </span>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#A66CFF] to-[#F8C3FF] group-hover:w-full transition-all duration-500"></span>
+            </motion.a>
+          ))}
+          {/* Dropdown menu */}
+          <Dropdown
+            menu={{ items }}
+            placement="bottom"
+            className="md:hidden transition ease-out duration-300"
+          >
+            <RiMenu4Fill className="text-xl sm:text-2xl text-white hover:text-blue-600 transition-transform duration-300 transform hover:rotate-180" />
+          </Dropdown>
+          {/* Modern Neon Resume Button */}
+          <motion.a
+            href="/"
+            download
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <button className="relative flex items-center gap-2 px-6 py-1.5 md:py-2 rounded-full text-white font-semibold bg-[#0f1115]/60 backdrop-blur-sm border border-[#265496] hover:border-0 shadow-md transition duration-300 overflow-hidden group">
+              <span className="absolute inset-0 w-full h-full bg-[#A66CFF] opacity-0 group-hover:opacity-70 transition-opacity duration-500"></span>
+              <span className="relative z-10 text-xs sm:text-sm lg:text-base font-normal md:font-medium">
+                Resume
+              </span>
+              <span className="absolute left-2 top-1/2 -translate-y-1/2 w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-[#A66CFF]"></span>
+            </button>
+          </motion.a>
+        </div>
+      </div>
+    </motion.nav>
+    </div>
+  );
 };
 
 export default Header;
