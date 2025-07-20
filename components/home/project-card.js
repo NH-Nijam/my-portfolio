@@ -4,6 +4,13 @@ import React from 'react';
 
 const Project = ({img, title, description, techno, live, repo}) => {
     return (
+        <div
+      className="w-full rounded-2xl border-2 border-transparent animate-border"
+      style={{
+        background:
+          "linear-gradient(45deg,#172033,rgba(30,41,59,1) 50%,#172033) padding-box, conic-gradient(from var(--border-angle), rgba(71,85,105,0.48) 80%, #6366f1 86%, #a5b4fc 90%, #6366f1 94%, rgba(71,85,105,0.48)) border-box",
+      }}
+    >
         <div data-aos="fade-right" className=' md:h-[400px] h-[250px] rounded-lg group relative overflow-hidden shadow-lg  shadow-orange-600  duration-500 hover:shadow-none'>
             <Image src={img} width={500} height={500} alt='project' className='w-full h-full absolute rounded-lg bg-contain'/>
             <div className='relative w-full h-full bg-orange-600/90 rounded-lg opacity-0 group-hover:opacity-100 text-white duration-700 2xl:p-10 md:p-5 p-3 flex flex-col justify-center  '>
@@ -16,7 +23,7 @@ const Project = ({img, title, description, techno, live, repo}) => {
                     <Link href={repo} target='blank'><button className='bg-white text-light md:py-2 md:text-2xl font-bold rounded md:rounded-lg w-full h-full hover:bg-gray-900 hover:text-white hover:scale-105 duration-500'>Repository</button></Link>
                 </div>
             </div>
-        </div>
+        </div></div>
     );
 };
 

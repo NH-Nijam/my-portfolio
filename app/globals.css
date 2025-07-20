@@ -20,3 +20,27 @@ body {
     text-wrap: balance;
   }
 }
+@keyframes moveBorder {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+@property --border-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: '<angle>';
+}
+@keyframes rotateBorder {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.animate-border {
+  --border-angle: 0deg;
+  animation: rotateBorder 6s linear infinite;
+}

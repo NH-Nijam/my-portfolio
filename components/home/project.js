@@ -58,8 +58,15 @@ const projects = [
 // Card Component
 function ProjectCard({ title, description, tech }) {
   return (
+    <div
+      className="w-full rounded-2xl border-2 border-transparent animate-border"
+      style={{
+        background:
+          "linear-gradient(45deg,#172033,rgba(30,41,59,1) 50%,#172033) padding-box, conic-gradient(from var(--border-angle), rgba(71,85,105,0.48) 80%, #6366f1 86%, #a5b4fc 90%, #6366f1 94%, rgba(71,85,105,0.48)) border-box",
+      }}
+    >
     <motion.div
-      className="bg-[#1a1a2e] rounded-2xl p-5 shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300"
+      className="bg-[#1a1a2e] h-full rounded-2xl p-5 shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300"
       whileHover={{ scale: 1.03 }}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +116,7 @@ function ProjectCard({ title, description, tech }) {
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.div></div>
   );
 }
 

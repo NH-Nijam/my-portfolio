@@ -75,19 +75,15 @@ export default function Skill() {
         }}
       >
         {skills.map((skill, idx) => (
-          <motion.div
-            key={idx}
-            className="flex flex-col items-center justify-center bg-[#1e293b] p-5 rounded-xl hover:shadow-lg hover:shadow-cyan-500/30 transition"
-            whileHover={{ scale: 1.05 }}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              show: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.5 }}
+           <button key={idx} className="relative inline-flex h-fit overflow-hidden rounded-xl p-[1px] mt-6">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex gap-2 h-full w-full cursor-pointer items-center justify-center rounded-xl bg-slate-950 text-sm font-medium text-white backdrop-blur-3xl">
+          <div
+            className="w-full flex flex-col items-center justify-center bg-[#1e293b] py-6 rounded-xl"
           >
             {skill.icon}
             <span className="mt-2 text-sm">{skill.name}</span>
-          </motion.div>
+          </div></span></button>
         ))}
       </motion.div>
     </section>
