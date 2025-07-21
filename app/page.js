@@ -15,10 +15,10 @@ const Home = () => {
         <section className="bg-gray-800 h-screen sticky top-0 rounded-tr-2xl rounded-tl-2xl overflow-hidden"> 
          <Skill />
         </section>
-        <section className="text-white  w-full bg-slate-950 sticky top-0">
+        <section  className="text-white  w-full bg-slate-950 sticky top-0">
          <Projects />
         </section>
-        <section className="text-white bg-gray-800 w-full sticky top-0">
+        <section  className="text-white bg-gray-800 w-full sticky top-0">
          <ContactPage />
         </section>
       </div>

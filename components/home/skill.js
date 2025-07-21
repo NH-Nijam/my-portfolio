@@ -38,7 +38,7 @@ const skills = [
 
 export default function Skill() {
   return (
-    <section id="skills" className="py-16 px-4 bg-[#0f172a] text-white">
+    <section id="skills" className="py-[100px] px-4 bg-[#0f172a] text-white ">
       <div className="text-center mb-12">
         <motion.h2
           className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text"
@@ -61,7 +61,7 @@ export default function Skill() {
       </div>
 
       <motion.div
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 container"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -77,7 +77,7 @@ export default function Skill() {
         {skills.map((skill, idx) => (
            <button key={idx} className="relative inline-flex h-fit overflow-hidden rounded-xl p-[1px] mt-6">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex gap-2 h-full w-full cursor-pointer items-center justify-center rounded-xl bg-slate-950 text-sm font-medium text-white backdrop-blur-3xl">
+            <span className="inline-flex gap-2 h-full w-full cursor-default items-center justify-center rounded-xl bg-slate-950 text-sm font-medium text-white backdrop-blur-3xl">
           <div
             className="w-full flex flex-col items-center justify-center bg-[#1e293b] py-6 rounded-xl"
           >

@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export default function ContactPage() {
   return (
-    <div id="contact" className="bg-[#0D111C] text-white">
-      <section className="py-20 px-4 max-w-7xl mx-auto" id="contact">
+    <div id='contact' className="bg-[#0D111C] text-white">
+      <section className="py-[100px] px-4 max-w-7xl mx-auto" id="contact">
         {/* Header */}
         <motion.div
           className="text-center mb-14"
