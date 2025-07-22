@@ -34,6 +34,7 @@ const Me = [
 const Hero = () => {
   return (
     <section id='about' className="relative h-screen z-10 container flex flex-row justify-between items-center gap-8 md:gap-12 lg:gap-16 pb-16 md:pb-20 lg:pb-28 pt-16 sm:pt-32 md:pt-40 lg:pt-44">
+      <h3 className="text-center bg-red-600 p-10 rounded-xl">Work in progress....</h3>
       <motion.div
         className="flex flex-col-reverse lg:flex-row items-center gap-10"
         initial={{ opacity: 0, x: -50 }}
